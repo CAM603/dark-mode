@@ -7,7 +7,7 @@ const Coin = () => {
     const [coinPic, setCoinPic] = useState({});
     const [description, setDescription] = useState('')
     const { id } = useParams();
-    console.log(coinData)
+    console.log(coinData.image)
     useEffect(() => {
         axios
         .get(`https://api.coingecko.com/api/v3/coins/${id}`)
@@ -18,6 +18,7 @@ const Coin = () => {
         })
         .catch(err => console.log(err));
     }, []);
+    
     return (
     <div className="coin">
         <div className="title">
